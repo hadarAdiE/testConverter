@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="inptContainer">
+        <input type="checkbox" class="checkTbButter">
+        <label for="TbsOfButter" class="ButterText">Tb of butter</label>
+        <input type="checkbox" class="checkOunce">
+        <label for="onces" class="onceText">Ounce</label>
+    </div>
+    <input type="text" class="input">
+    <button class="submit">submit</button>
+    <p class="outPut"></p>
+
+    <script>
+        // let outPut = document.querySelector('.output');
+        const submit = document.querySelector('.submit');
+        const checkTbButter = document.querySelector(".checkTbButter");
+        const checkOunce = document.querySelector('.checkOunce');
+        let userNum = document.querySelector(".input");
+        submit.addEventListener('click', function () {
+            let num = userNum.value;
+
+            if (checkTbButter.checked) {
+                let multiplyB = num * 14;
+                // console.log(multiplyB)
+                document.querySelector('.outPut').innerText = multiplyB + "g";
+            } else if (checkOunce.checked) {
+                let multiplyO = (num *28.34952).toFixed(2);
+                document.querySelector('.outPut').innerText = multiplyO + "g";
+
+            } else {
+                alert("choose ounce/tbsbutter");
+            }
+        })
+    </script>
+</body>
+
+</html>
